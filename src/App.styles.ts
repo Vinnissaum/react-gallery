@@ -59,4 +59,25 @@ export const PhotoList = styled.div`
   gap: 1rem;
 `;
 
-export const UploadForm = styled.form``;
+export const UploadForm = styled.form`
+  background-color: #3d3F43;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+
+  input[type=submit] {
+    background-color: #756DF4;
+    border: 0;
+    color: #FFFFFF;
+    padding: 0.7rem 1.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    margin: 0 2rem;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`;

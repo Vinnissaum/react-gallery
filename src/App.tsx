@@ -1,13 +1,14 @@
 import { Container, Content, Header, WarningProcess,
   PhotoList, UploadForm } from './App.styles';
 import { CircleNotch } from 'phosphor-react';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Photo } from "./types/Photo";
 import * as Photos from "./services/photos";
 import { PhotoItem } from './components/PhotoItem';
 
 function App() {
   const [allPhotosLoading, setAllPhotosLoading] = useState(false);
+  const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [photos, setPhotos] = useState<Photo[]>([]);
 
   useEffect(() => {
@@ -20,8 +21,15 @@ function App() {
     getPhotos();
   }, []);
 
-  const handleFormSubmit = () => {
-    
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const file = formData.get('image') as File;
+
+    if (file && file.size > 0) {
+      setIsUploadingPhoto(true);
+    }
   }
   
   return (
@@ -29,7 +37,8 @@ function App() {
       <Content>
         <Header>Photo Gallery</Header>
         <UploadForm method="post" onSubmit={handleFormSubmit}>
-
+          <input type="file" name="image"/>
+          <input type="submit" value="Upload" />
         </UploadForm>
         {allPhotosLoading &&
           <WarningProcess>

@@ -1,6 +1,7 @@
 import { Photo } from "../types/Photo";
 import { storage } from "../libs/firebase";
-import { ref, listAll, getDownloadURL } from "firebase/storage"; 
+import { ref, listAll, getDownloadURL, uploadBytes } from "firebase/storage";
+import { v4 as createId } from "uuid";
 
 export const getAll = async () => {
   const list: Photo[] = [];
@@ -18,4 +19,19 @@ export const getAll = async () => {
   }
 
   return list;
+}
+
+export const insert = async (file: File) => {
+  if (['image/jpg', 'image/png', 'image/jpeg'].includes(file.type)) {
+
+    const randomAddress = createId();
+    const newFile = ref(storage, `images/${randomAddress}`);
+    
+    const upload = await uploadBytes(newFile, file);
+    const url = await getDownloadURL(upload.ref);
+
+    return { name: upload.ref.name, url } as Photo;
+  } else {
+    return new Error('File type not supported');
+  }
 }
