@@ -58,3 +58,5 @@ export const PhotoList = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 `;
+
+export const UploadForm = styled.form``;

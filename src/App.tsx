@@ -1,9 +1,10 @@
 import { Container, Content, Header, WarningProcess,
-  PhotoList } from './App.styles';
+  PhotoList, UploadForm } from './App.styles';
 import { CircleNotch } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 import { Photo } from "./types/Photo";
 import * as Photos from "./services/photos";
+import { PhotoItem } from './components/PhotoItem';
 
 function App() {
   const [allPhotosLoading, setAllPhotosLoading] = useState(false);
@@ -18,11 +19,18 @@ function App() {
     }
     getPhotos();
   }, []);
+
+  const handleFormSubmit = () => {
+    
+  }
   
   return (
     <Container>
       <Content>
         <Header>Photo Gallery</Header>
+        <UploadForm method="post" onSubmit={handleFormSubmit}>
+
+        </UploadForm>
         {allPhotosLoading &&
           <WarningProcess>
             Loading photos, please wait
@@ -32,7 +40,7 @@ function App() {
         {(!allPhotosLoading && photos.length > 0 ) &&
           <PhotoList>
             {photos.map((item, index) =>(
-              <div key={index}>{item.name}</div>
+              <PhotoItem key={index} photo={item}/>
             ))}
           </PhotoList>
         }
