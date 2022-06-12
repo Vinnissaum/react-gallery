@@ -9,7 +9,7 @@ export const PhotoItem = ({ photo }: Props) => {
   return(
     <Container>
       <img src={photo.url} alt={photo.name} />
-      <span>{photo.name}</span>
+      <div>{photo.name}</div>
     </Container>
   );
 }

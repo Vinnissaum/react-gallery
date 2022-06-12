@@ -21,7 +21,7 @@ export const getAll = async () => {
   return list;
 }
 
-export const insert = async (file: File) => {
+export const upload = async (file: File) => {
   if (['image/jpg', 'image/png', 'image/jpeg'].includes(file.type)) {
 
     const randomAddress = createId();

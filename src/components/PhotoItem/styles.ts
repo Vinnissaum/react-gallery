@@ -10,5 +10,10 @@ export const Container = styled.div`
     display: block;
     margin-bottom: 1rem;
     border-radius: 1rem;
+  } 
+
+  div  {
+    font-size: 1.1rem;
+    text-align: center;
   }
 `;

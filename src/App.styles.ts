@@ -31,7 +31,7 @@ export const WarningProcess = styled.div`
   align-items: center;
   justify-content: center;
   
-  margin-top: 20rem;
+  margin-top: 10rem;
 
   font-size: 5rem;
 
@@ -65,13 +65,17 @@ export const UploadForm = styled.form`
   border-radius: 1rem;
   margin-bottom: 3rem;
 
-  input[type=submit] {
+  button[type=submit] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
     background-color: #756DF4;
     border: 0;
     color: #FFFFFF;
     padding: 0.7rem 1.4rem;
     font-size: 1.5rem;
-    font-weight: bold;
     border-radius: 1rem;
     margin: 0 2rem;
     cursor: pointer;
@@ -79,5 +83,9 @@ export const UploadForm = styled.form`
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  span {
+    font-size: 1.5rem;
   }
 `;

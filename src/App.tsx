@@ -1,6 +1,6 @@
 import { Container, Content, Header, WarningProcess,
   PhotoList, UploadForm } from './App.styles';
-import { CircleNotch } from 'phosphor-react';
+import { CircleNotch, UploadSimple } from 'phosphor-react';
 import { FormEvent, useEffect, useState } from 'react';
 import { Photo } from "./types/Photo";
 import * as Photos from "./services/photos";
@@ -29,6 +29,17 @@ function App() {
 
     if (file && file.size > 0) {
       setIsUploadingPhoto(true);
+      const result = await Photos.upload(file);
+      setIsUploadingPhoto(false);
+
+      if (result instanceof Error) {
+        alert (result.message);
+      } else {
+        const newPhotoList = [...photos];
+        newPhotoList.push(result);
+
+        setPhotos(newPhotoList);
+      }
     }
   }
   
@@ -38,7 +49,13 @@ function App() {
         <Header>Photo Gallery</Header>
         <UploadForm method="post" onSubmit={handleFormSubmit}>
           <input type="file" name="image"/>
-          <input type="submit" value="Upload" />
+          <button type="submit">
+            <UploadSimple size={16} weight='bold'/>
+            Upload
+          </button>
+          {isUploadingPhoto &&
+          <span>Uploading...</span>
+          }
         </UploadForm>
         {allPhotosLoading &&
           <WarningProcess>
