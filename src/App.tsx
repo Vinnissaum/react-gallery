@@ -43,6 +43,22 @@ function App() {
     }
   }
 
+  const handleDeleteClick = async (fileToDelete: Photo) => {
+    // Delete photo from firebase storage
+    await Photos.deleteImage(fileToDelete);
+    
+    // Update photos State
+    const newList = [...photos];
+    for (let i in newList) {
+      if (newList[i].name === fileToDelete.name) {
+        newList.splice(parseInt(i), 1);
+      } else {
+        return;
+      }
+      setPhotos(newList);
+    } 
+  }
+
   return (
     <Container>
       <Content>
@@ -68,7 +84,8 @@ function App() {
             {photos.map((item, index) =>(
               <PhotoItem 
                 key={index} 
-                photo={item} 
+                photo={item}
+                onDeleteClick={() => handleDeleteClick(item)} 
               />
             ))}
           </PhotoList>

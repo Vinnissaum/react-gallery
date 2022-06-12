@@ -25,8 +25,8 @@ The following tools were used in this project:
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Firebase](https://console.firebase.google.com/)
-- [StyledComponents](https://styled-components.com/)
-- [PhosphorIcons](https://phosphoricons.com/)
+- [Styled Components](https://styled-components.com/)
+- [Phosphor Icons](https://phosphoricons.com/)
 
 ## :white_check_mark: Requirements
 

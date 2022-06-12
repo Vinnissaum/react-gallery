@@ -20,7 +20,7 @@ export const Container = styled.div`
 
 export const Icons = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   top: 0;
   right: 0;
 
