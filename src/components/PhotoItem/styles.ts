@@ -17,3 +17,21 @@ export const Container = styled.div`
     text-align: center;
   }
 `;
+
+export const Icons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+
+  padding-bottom: 0.5rem;
+
+  .icon {
+    cursor: pointer;
+    transition: all 200ms;
+
+    :hover {
+      transform: scale(1.2);
+    }
+  }
+`;

@@ -42,7 +42,7 @@ function App() {
       }
     }
   }
-  
+
   return (
     <Container>
       <Content>
@@ -66,7 +66,10 @@ function App() {
         {(!allPhotosLoading && photos.length > 0 ) &&
           <PhotoList>
             {photos.map((item, index) =>(
-              <PhotoItem key={index} photo={item}/>
+              <PhotoItem 
+                key={index} 
+                photo={item} 
+              />
             ))}
           </PhotoList>
         }
