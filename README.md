@@ -38,7 +38,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 # Clone this project
 $ git clone https://github.com/Vinnissaum/react-gallery
 # Access
-$ cd react-imc-calc
+$ cd react-gallery
 # Install dependencies
 $ npm install
 # Run the project
