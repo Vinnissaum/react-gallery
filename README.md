@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+<h1 align="center">Gallery</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="https://github.com/Vinnissaum" target="_blank">Author</a>
+</p>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## :dart: About
 
-### `npm start`
+Photo gallery made with firebase storage service.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Preview
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src='./src/assets/images/example.png'/>
 
-### `npm test`
+## :rocket: Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The following tools were used in this project:
 
-### `npm run build`
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Firebase](https://console.firebase.google.com/)
+- [StyledComponents](https://styled-components.com/)
+- [PhosphorIcons](https://phosphoricons.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :white_check_mark: Requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :checkered_flag: Starting
 
-### `npm run eject`
+```bash
+# Clone this project
+$ git clone https://github.com/Vinnissaum/react-gallery
+# Access
+$ cd react-imc-calc
+# Install dependencies
+$ npm install
+# Run the project
+$ npm start
+# The server will initialize in the <http://localhost:3000>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+&#xa0;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a href="#top">Back to top</a>
